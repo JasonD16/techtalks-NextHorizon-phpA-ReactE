@@ -1,16 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import logo from "./NextHorizon-logo.png";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 20) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <nav className="navbar">
+        <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
             <div className="navbar-container">
                 {/* Logo Section - Left */}
                 <div className="navbar-logo">
