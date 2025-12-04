@@ -19,7 +19,6 @@ class AuthController extends Controller
         
         $validated = $request->validated(); 
         // Hash password 
-        $validated["password"] = Hash::make($validated["password"]); 
         $user = User::create($validated); 
         // Generate personal access token for API authentication
         $token = $user->createToken("auth_token")->plainTextToken; 
