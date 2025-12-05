@@ -1,0 +1,51 @@
+.main_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+.check {
+  color: rgb(20, 70, 106);
+  margin-right: 8px;
+}
+.header {
+ margin-top: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
+.paragraph{
+    text-align: center;
+    color: rgb(235, 234, 234);
+    margin-bottom: 50px;
+    font-weight:lighter;
+    font-size: 14px;
+}
+body {
+  font-family:  sans-serif;
+  background: linear-gradient(to right, #97792f, #fdcb46);
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+  padding: 0;
+}
+.right_list {
+  list-style-type: none;
+  padding: 0;
+  
+}
+.left_list {
+  list-style-type: none;
+  padding: 0;
+}
+.right_div {
+  color: rgb(20, 70, 106);
+  padding: 20px;
+}
+.left_list {
+  color: rgb(20, 70, 106);
+  padding: 20px;
+}
+.li{
+    margin-bottom: 40px;
+}
