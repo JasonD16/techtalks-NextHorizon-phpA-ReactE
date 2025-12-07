@@ -1,0 +1,28 @@
+/* ============ HOME PAGE WRAPPER ============ */
+.home-container {
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+/* ============ SECTIONS WRAPPER ============ */
+.home-container .container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* ============ CTA BUTTON AREA ============ */
+.cta-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* ============ MOBILE RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .cta-wrapper {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+}

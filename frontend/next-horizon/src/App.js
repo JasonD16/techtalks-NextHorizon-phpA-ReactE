@@ -1,27 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-import Register from './component/registration/register';
-import Signin from './component/registration/signin';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { Layout, Menu } from 'antd';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const { Header, Content } = Layout;
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Authentication/Login/Login";
+import Register from "./Pages/Authentication/Login/Register/Register";
+
+import "./App.css";
 
 function App() {
   return (
     <Router>
-      <Layout>
+      <div className="app-container">
 
-        <Content style={{ padding: "20px", backgroundColor: "#fff" , display: "flex" , alignItems: "center" ,justifyContent: "center" }}>
-          <Routes>
-            <Route path="signin" element={<Signin />} />
-            <Route path="register" element={<Register />} />
-          </Routes>
-        </Content>
-      </Layout>
+        <Routes>
+
+          {/* Home page (using your components Navbar, Year, Courses, About) */}
+          <Route path="/" element={<Home />} />
+
+          {/* Auth Pages */}
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+
+        </Routes>
+
+      </div>
     </Router>
   );
 }
 
 export default App;
-
