@@ -1,0 +1,248 @@
+.about-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-check-icon {
+    color: #002E52;
+    margin-right: 12px;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.about-header {
+    margin-top: 100px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: white;
+    padding: 0 20px;
+}
+
+.about-title {
+    color: white;
+    font-size: 48px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+.about-paragraph {
+    color: #D9D9D9;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 27px;
+    word-wrap: break-word;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to right, #97792f, #fdcb46);
+    background-repeat: no-repeat;
+    margin: 0;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.about-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-column {
+    padding: 0;
+}
+
+.about-list-item {
+    color: #002E52;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 27px;
+    word-wrap: break-word;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+/* Large Tablets and Small Desktops (1024px and below) */
+@media (max-width: 1024px) {
+    .about-main {
+        gap: 60px;
+        padding: 30px 20px;
+    }
+
+    .about-header {
+        margin-top: 80px;
+        margin-bottom: 50px;
+    }
+
+    .about-title {
+        font-size: 42px;
+    }
+
+    .about-paragraph {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .about-list-item {
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 35px;
+    }
+
+    .about-check-icon {
+        font-size: 18px;
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .about-main {
+        gap: 40px;
+        padding: 25px 16px;
+    }
+
+    .about-header {
+        margin-top: 70px;
+        margin-bottom: 40px;
+        padding: 0 16px;
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .about-paragraph {
+        font-size: 16px;
+        line-height: 23px;
+    }
+
+    .about-list-item {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+
+    .about-check-icon {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+}
+
+/* Mobile Landscape (640px and below) - Switch to Single Column */
+@media (max-width: 640px) {
+    .about-main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 16px;
+    }
+
+    .about-header {
+        margin-top: 80px;
+        margin-bottom: 30px;
+    }
+
+    .about-title {
+        font-size: 32px;
+    }
+
+    .about-paragraph {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .about-list-item {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 25px;
+    }
+
+    .about-check-icon {
+        font-size: 15px;
+        margin-right: 10px;
+        margin-top: 2px;
+    }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+    .about-main {
+        padding: 16px 12px;
+    }
+
+    .about-header {
+        margin-top: 70px;
+        margin-bottom: 25px;
+        padding: 0 12px;
+    }
+
+    .about-title {
+        font-size: 28px;
+    }
+
+    .about-paragraph {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .about-list-item {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 20px;
+    }
+
+    .about-check-icon {
+        font-size: 14px;
+        margin-right: 8px;
+    }
+}
+
+/* Very Small Mobile (360px and below) */
+@media (max-width: 360px) {
+    .about-main {
+        padding: 12px 10px;
+    }
+
+    .about-header {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .about-title {
+        font-size: 24px;
+    }
+
+    .about-paragraph {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .about-list-item {
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 16px;
+    }
+
+    .about-check-icon {
+        font-size: 12px;
+        margin-right: 6px;
+    }
+}

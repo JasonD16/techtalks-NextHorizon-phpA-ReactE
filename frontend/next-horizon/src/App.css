@@ -11,7 +11,7 @@ body {
   color: #002E52;
 }
 
-/* ============ COLORS ============ */
+/* ============ CSS VARIABLES ============ */
 :root {
   --primary: #FDCB46;
   --white: #FFFFFF;
@@ -19,58 +19,11 @@ body {
   --gray: #D9D9D9;
 }
 
-/* ============ APP MAIN WRAPPER ============ */
-.app-container {
+/* ============ APP WRAPPER ============ */
+.App {
   width: 100%;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
-}
-
-/* ============ GLOBAL PAGE CONTAINER ============ */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ============ BUTTONS ============ */
-.btn {
-  padding: 12px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--dark-blue);
-}
-
-.btn-primary:hover {
-  opacity: 0.85;
-}
-
-/* ============ TITLES ============ */
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--dark-blue);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* ============ RESPONSIVE RULES ============ */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 1.6rem;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
 }
