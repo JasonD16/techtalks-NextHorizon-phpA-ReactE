@@ -1,0 +1,107 @@
+/* Page features */
+.features-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Title */
+.features-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #0a1a33;
+}
+
+.features-title span {
+  color: #ffd100; /* highlight Excel */
+}
+
+.features-subtitle {
+  font-size: 1rem;
+  color: #6c7a90;
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* features cards grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+}
+
+/* Individual card */
+.features-card {
+  background: #fff;
+  padding: 1.8rem;
+  border-radius: 18px;
+  text-align: left;
+  box-shadow: 0px 2px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: 0.3s ease;
+}
+
+.features-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 6px 22px rgba(0,0,0,0.13);
+}
+
+/* Icons */
+.features-icon {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-bottom: 0.3rem;
+}
+
+.features-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a1a33;
+}
+
+.features-card p {
+  font-size: 0.88rem;
+  color: #4e5d74;
+  line-height: 1.4rem;
+}
+
+
+@media (max-width: 850px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-card {
+    text-align: center;
+    align-items: center;
+  }
+
+  .features-card p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-title {
+    font-size: 2rem;
+  }
+
+  .features-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .features-card {
+    padding: 1.4rem;
+  }
+
+  .features-icon {
+    width: 38px;
+    height: 38px;
+  }
+}
