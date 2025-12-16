@@ -57,5 +57,4 @@ function HowItWorks() {
         </div>
     );
 }
-
 export default HowItWorks;

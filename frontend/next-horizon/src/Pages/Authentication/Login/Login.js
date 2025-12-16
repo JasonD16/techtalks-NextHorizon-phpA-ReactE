@@ -12,16 +12,16 @@ function Login() {
 
         <form className="login-form">
 
-          <input 
-            type="text" 
-            placeholder="Full Name" 
-            className="input-field" 
+          <input
+            type="text"
+            placeholder="Full Name"
+            className="input-field"
           />
 
-          <input 
-            type="password" 
-            placeholder="Password" 
-            className="input-field" 
+          <input
+            type="password"
+            placeholder="Password"
+            className="input-field"
           />
 
           <button type="submit" className="btn-login">
@@ -38,9 +38,9 @@ function Login() {
 
         {/* Google Login */}
         <button className="google-btn">
-          <img 
-            src="https://www.svgrepo.com/show/475656/google-color.svg" 
-            alt="google icon" 
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            alt="google icon"
           />
           Sign in by Google
         </button>
@@ -48,6 +48,9 @@ function Login() {
         {/* Register Link */}
         <p className="register-text">
           Don’t have an account? <Link to="/register">Register here</Link>
+        </p>
+        <p className="forgot-text">
+          Forgot Password? <Link to="/forgot-password">Reset Password</Link>
         </p>
 
       </div>

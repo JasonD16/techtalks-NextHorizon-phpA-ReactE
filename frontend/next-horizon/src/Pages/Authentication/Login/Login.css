@@ -125,3 +125,21 @@
 .register-text a:hover {
   color: #001d36;
 }
+
+/* ===== FORGOT PASSWORD LINK ===== */
+.forgot-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #002E52;
+}
+
+.forgot-text a {
+  color: #002E52;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.forgot-text a:hover {
+  color: #001d36;
+}
