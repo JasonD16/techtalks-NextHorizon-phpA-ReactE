@@ -29,5 +29,5 @@ Route::middleware("auth:sanctum")->group(function () {
     // ASSIGN TUTORS
     Route::post('/courses/assign', [\App\Http\Controllers\Api\CourseUserController::class, 'store']);
     Route::post('/courses/unassign', [\App\Http\Controllers\Api\CourseUserController::class, 'destroy']);
-
+    Route::get('/materials/fillter',[\App\Http\Controllers\Api\MaterialController::class,'filterMat']);
 });

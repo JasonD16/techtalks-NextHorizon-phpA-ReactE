@@ -101,4 +101,32 @@ class MaterialController extends Controller
 
         return response()->json(['message' => 'Material deleted successfully.']);
     }
+   public function filterMat(Request $request)
+{
+    $user = $request->user();
+    $roleName = strtolower($user->role?->name ?? '');
+
+    // Only students can access
+    if ($roleName !== 'student') {
+        return response()->json([
+            "message" => "Only students can access this."
+        ], 403);
+    }
+
+    $query = Material::query();
+
+    if ($request->filled('course_id')) {
+        $query->where('course_id', $request->course_id);
+    }
+
+    if ($request->filled('year')) {
+        $query->where('year', $request->year);
+    }
+
+    if ($request->filled('type')) {
+        $query->where('type', $request->type);
+    }
+
+    return response()->json($query->get());
+}
 }
