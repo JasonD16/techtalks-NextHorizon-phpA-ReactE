@@ -22,4 +22,12 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::post('/courses', [CourseController::class, 'store']);
     Route::delete('/courses/{id}', [CourseController::class, 'destroy']);
 
+    //MATERIALS
+    Route::post('/materials', [\App\Http\Controllers\Api\MaterialController::class, 'store']);
+    Route::delete('/materials/{id}', [\App\Http\Controllers\Api\MaterialController::class, 'destroy']);
+
+    // ASSIGN TUTORS
+    Route::post('/courses/assign', [\App\Http\Controllers\Api\CourseUserController::class, 'store']);
+    Route::post('/courses/unassign', [\App\Http\Controllers\Api\CourseUserController::class, 'destroy']);
+
 });

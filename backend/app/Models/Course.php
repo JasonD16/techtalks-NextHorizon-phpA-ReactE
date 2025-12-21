@@ -20,5 +20,13 @@ class Course extends Model
         'code',
     ];
 
-    // Note: We will add relationships (like $this->hasMany(Material::class)) here later.
+    public function tutors()
+    {
+        return $this->belongsToMany(User::class, 'course_user');
+    }
+
+    public function materials()
+    {
+        return $this->hasMany(Material::class);
+    }
 }
