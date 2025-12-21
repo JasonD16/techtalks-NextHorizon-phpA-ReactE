@@ -1,0 +1,361 @@
+.payment-page {
+    background-color: #d9d9d9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+    /* Fixed navbar height (60px) + spacing (30px) */
+}
+
+.payment-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Changed from center to allow margin top */
+    padding: 40px 20px;
+}
+
+.payment-card {
+    background-color: white;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.payment-title {
+    color: #003366;
+    /* Navy Blue */
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.course-info-box {
+    background-color: #dcf2f9;
+    /* Light Blue */
+    border-top: 5px solid #003366;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.info-row {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.info-row:last-child {
+    margin-bottom: 0px;
+}
+
+.info-label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.section-title {
+    color: #003366;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-input {
+    width: 100%;
+    background-color: #e0e0e0;
+    /* Gray background similar to image */
+    padding: 12px 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: #003366;
+    background-color: #fff;
+}
+
+.payment-instructions {
+    font-size: 14px;
+    color: #333;
+    margin: 20px 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.whatsapp-button {
+    background-color: #ff8c00;
+    /* Orange */
+    color: #003366;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    /* Slight radius */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.whatsapp-button:hover {
+    background-color: #e67e00;
+}
+
+.cancel-link {
+    text-align: center;
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cancel-link:hover {
+    color: #000;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+/* Large Tablets and Small Desktops (1024px and below) */
+@media (max-width: 1024px) {
+    .payment-content {
+        padding: 32px 16px;
+    }
+
+    .payment-card {
+        padding: 32px;
+    }
+
+    .payment-title {
+        font-size: 26px;
+    }
+
+    .info-row {
+        font-size: 17px;
+    }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+    .payment-page {
+        padding-top: 80px;
+    }
+
+    .payment-content {
+        padding: 24px 12px;
+    }
+
+    .payment-card {
+        padding: 28px;
+    }
+
+    .payment-title {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .info-row {
+        font-size: 16px;
+    }
+
+    .form-input {
+        font-size: 15px;
+        padding: 11px 14px;
+    }
+
+    .whatsapp-button {
+        font-size: 15px;
+        padding: 11px;
+    }
+}
+
+/* Mobile Landscape (640px and below) */
+@media (max-width: 640px) {
+    .payment-page {
+        padding-top: 70px;
+    }
+
+    .payment-content {
+        padding: 20px 10px;
+    }
+
+    .payment-card {
+        padding: 24px;
+        max-width: 100%;
+    }
+
+    .payment-title {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .course-info-box {
+        padding: 16px;
+        margin-bottom: 24px;
+    }
+
+    .section-title {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .info-row {
+        font-size: 15px;
+    }
+
+    .form-input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .payment-instructions {
+        font-size: 13px;
+        margin: 16px 0;
+    }
+
+    .whatsapp-button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .cancel-link {
+        font-size: 13px;
+    }
+}
+
+/* Mobile Portrait (480px and below) */
+@media (max-width: 480px) {
+    .payment-page {
+        padding-top: 65px;
+    }
+
+    .payment-content {
+        padding: 16px 8px;
+    }
+
+    .payment-card {
+        padding: 20px;
+        border-radius: 6px;
+    }
+
+    .payment-title {
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+
+    .course-info-box {
+        padding: 14px;
+        margin-bottom: 20px;
+        border-top-width: 4px;
+    }
+
+    .section-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .info-row {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-input {
+        font-size: 13px;
+        padding: 9px 11px;
+    }
+
+    .payment-instructions {
+        font-size: 12px;
+        margin: 14px 0;
+    }
+
+    .whatsapp-button {
+        font-size: 13px;
+        padding: 9px;
+        gap: 8px;
+    }
+
+    .cancel-link {
+        font-size: 12px;
+    }
+}
+
+/* Very Small Mobile (360px and below) */
+@media (max-width: 360px) {
+    .payment-page {
+        padding-top: 60px;
+    }
+
+    .payment-content {
+        padding: 12px 6px;
+    }
+
+    .payment-card {
+        padding: 16px;
+    }
+
+    .payment-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .course-info-box {
+        padding: 12px;
+        margin-bottom: 16px;
+    }
+
+    .section-title {
+        font-size: 15px;
+    }
+
+    .info-row {
+        font-size: 13px;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-input {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .payment-instructions {
+        font-size: 11px;
+        margin: 12px 0;
+    }
+
+    .whatsapp-button {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .cancel-link {
+        font-size: 11px;
+    }
+}
