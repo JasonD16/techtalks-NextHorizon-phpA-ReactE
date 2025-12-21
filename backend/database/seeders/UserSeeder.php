@@ -31,5 +31,21 @@ class UserSeeder extends Seeder
             'major' => 'Biology',
             'year' => 1
         ]);
+
+        // 3. A Tutor
+        $tutor = User::create([
+            'name' => 'tutor',
+            'email' => 'tutor@techtalks.com',
+            'password' => Hash::make('password'),
+            'role_id' => 3,
+            'university_id' => 1,
+            'major' => 'Mathematics',
+            'year' => 4
+        ]);
+
+        $course = \App\Models\Course::first();
+        if($course) {
+            $tutor->courses()->attach($course->id);
+        }
     }
 }
