@@ -101,32 +101,35 @@ class MaterialController extends Controller
 
         return response()->json(['message' => 'Material deleted successfully.']);
     }
-   public function filterMat(Request $request)
-{
-    $user = $request->user();
-    $roleName = strtolower($user->role?->name ?? '');
+    public function filterMaterial(Request $request)
+    {
+        $query = Material::query();
 
-    // Only students can access
-    if ($roleName !== 'student') {
-        return response()->json([
-            "message" => "Only students can access this."
-        ], 403);
+        // Context: Filtering is always scoped to a course
+        if ($request->filled('course_id')) {
+            $query->where('course_id', $request->course_id);
+        }
+
+        // Search by Title (partial)
+        if ($request->filled('title')) {
+             $query->where('title', 'like', '%' . $request->title . '%');
+        }
+
+        // Filter by Type (exact)
+        if ($request->filled('type')) {
+            $query->where('type', $request->type);
+        }
+
+        // Filter by Year (exact)
+        if ($request->filled('year')) {
+            $query->where('year', $request->year);
+        }
+
+         // Filter by Is Link (boolean)
+        if ($request->filled('is_link')) {
+             $query->where('is_link', $request->boolean('is_link'));
+        }
+
+        return response()->json($query->get());
     }
-
-    $query = Material::query();
-
-    if ($request->filled('course_id')) {
-        $query->where('course_id', $request->course_id);
-    }
-
-    if ($request->filled('year')) {
-        $query->where('year', $request->year);
-    }
-
-    if ($request->filled('type')) {
-        $query->where('type', $request->type);
-    }
-
-    return response()->json($query->get());
-}
 }

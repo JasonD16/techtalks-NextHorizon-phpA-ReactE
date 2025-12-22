@@ -13,12 +13,19 @@ class CourseController extends Controller
      * Returns a list of all courses.
      * Accessible by: Everyone (Students, Tutors, Admins)
      */
-    public function index()
+    public function index(Request $request)
     {
-        //Fetch all courses from the DB
-        $courses = Course::all();
+        $query = Course::query();
 
-        return response()->json($courses, 200);
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('code', 'like', "%{$search}%");
+            });
+        }
+
+        return response()->json($query->get(), 200);
     }
 
     /**

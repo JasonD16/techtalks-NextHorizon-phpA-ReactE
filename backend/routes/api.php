@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UniversityController;
 use App\Http\Controllers\Api\CourseController;
-
+use App\Http\Controllers\Api\MaterialController;
+use App\Http\Controllers\Api\CourseUserController;
 //AUTH
 Route::post("/register", [AuthController::class, "register"]);
 Route::post("/login", [AuthController::class, "login"]);
@@ -23,11 +24,11 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::delete('/courses/{id}', [CourseController::class, 'destroy']);
 
     //MATERIALS
-    Route::post('/materials', [\App\Http\Controllers\Api\MaterialController::class, 'store']);
-    Route::delete('/materials/{id}', [\App\Http\Controllers\Api\MaterialController::class, 'destroy']);
+    Route::post('/materials', [MaterialController::class, 'store']);
+    Route::delete('/materials/{id}', [MaterialController::class, 'destroy']);
+    Route::get('/materials/filter',[MaterialController::class,'filterMaterial']);
 
     // ASSIGN TUTORS
-    Route::post('/courses/assign', [\App\Http\Controllers\Api\CourseUserController::class, 'store']);
-    Route::post('/courses/unassign', [\App\Http\Controllers\Api\CourseUserController::class, 'destroy']);
-    Route::get('/materials/fillter',[\App\Http\Controllers\Api\MaterialController::class,'filterMat']);
+    Route::post('/courses/assign', [CourseUserController::class, 'store']);
+    Route::post('/courses/unassign', [CourseUserController::class, 'destroy']);
 });
