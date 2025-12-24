@@ -25,12 +25,17 @@ class ProfileController extends Controller
         $validated = $request->validate([
             'major' => 'sometimes|string|max:255',
             'university_id' => 'sometimes|exists:universities,id',
+            'year' => 'sometimes|integer',
             'profile_image' => 'sometimes|image|max:2048', // handle file upload
         ]);
 
         // Update text fields
         if (isset($validated['major'])) {
             $user->major = $validated['major'];
+        }
+
+        if (isset($validated['year'])) {
+            $user->year = $validated['year'];
         }
 
         if (isset($validated['university_id'])) {

@@ -23,7 +23,8 @@ class User extends Authenticatable
         'password',
         "university_id",
         "major",
-        "year"
+        "year",
+        "profile_image"
     ];
 
     /**
