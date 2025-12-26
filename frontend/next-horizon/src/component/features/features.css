@@ -1,4 +1,9 @@
 /* Page features */
+.features-section {
+  width: 100%;
+  background-color: #ffffff;
+}
+
 .features-container {
   width: 100%;
   max-width: 1200px;
@@ -12,11 +17,12 @@
 .features-title {
   font-size: 2.6rem;
   font-weight: 800;
-  color: #0a1a33;
+  color: #002E52;
 }
 
 .features-title span {
-  color: #ffd100; /* highlight Excel */
+  color: #FDCB46;
+  /* highlight Excel */
 }
 
 .features-subtitle {
@@ -39,7 +45,7 @@
   padding: 1.8rem;
   border-radius: 18px;
   text-align: left;
-  box-shadow: 0px 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -48,7 +54,7 @@
 
 .features-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0px 6px 22px rgba(0,0,0,0.13);
+  box-shadow: 0px 6px 22px rgba(0, 0, 0, 0.13);
 }
 
 /* Icons */

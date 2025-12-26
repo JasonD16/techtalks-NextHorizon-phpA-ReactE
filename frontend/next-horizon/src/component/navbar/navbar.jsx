@@ -61,8 +61,8 @@ const Navbar = ({ simple, showProfile, userName = "User" }) => {
                         {/* Navigation Links - Desktop */}
                         <div className="navbar-links">
                             <a href="#features" className="nav-link">Features</a>
-                            <a href="#years" className="nav-link">Years</a>
-                            <a href="#courses" className="nav-link">Courses</a>
+                            <a href="#years" className="nav-link">Branches</a>
+                            <span className="nav-link" onClick={() => navigate("/courses")} style={{ cursor: "pointer" }}>Courses</span>
                             <a href="#about" className="nav-link">About</a>
                         </div>
 
@@ -116,7 +116,7 @@ const Navbar = ({ simple, showProfile, userName = "User" }) => {
             <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
                 <a href="#features" className="mobile-nav-link" onClick={toggleMenu}>Features</a>
                 <a href="#years" className="mobile-nav-link" onClick={toggleMenu}>Years</a>
-                <a href="#courses" className="mobile-nav-link" onClick={toggleMenu}>Courses</a>
+                <span className="mobile-nav-link" onClick={() => { navigate("/courses"); toggleMenu(); }}>Courses</span>
                 <a href="#about" className="mobile-nav-link" onClick={toggleMenu}>About</a>
             </div>
         </nav>

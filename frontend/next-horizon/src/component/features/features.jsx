@@ -1,8 +1,8 @@
 import React from "react";
 import "./features.css";
 
-const features = () => {
-  const features = [
+const Features = () => {
+  const featuresList = [
     {
       img: "/icons/recorded.png",
       title: "Recorded Lectures",
@@ -36,25 +36,27 @@ const features = () => {
   ];
 
   return (
-    <div className="features-container">
-      <h1 className="features-title">
-        Everything You Need to <span>Excel</span>
-      </h1>
-      <p className="features-subtitle">
-        Comprehensive resources and support designed to help you succeed in your journey
-      </p>
+    <section className="features-section" id="features">
+      <div className="features-container">
+        <h1 className="features-title">
+          Everything You Need to <span>Excel</span>
+        </h1>
+        <p className="features-subtitle">
+          Comprehensive resources and support designed to help you succeed in your journey
+        </p>
 
-      <div className="features-grid">
-        {features.map((service, index) => (
-          <div className="service-card" key={index}>
-            <img src={service.img} alt={service.title} className="service-icon" />
-            <h3>{service.title}</h3>
-            <p>{service.desc}</p>
-          </div>
-        ))}
+        <div className="features-grid">
+          {featuresList.map((service, index) => (
+            <div className="features-card" key={index}>
+              <img src={service.img} alt={service.title} className="features-icon" />
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default features;
+export default Features;

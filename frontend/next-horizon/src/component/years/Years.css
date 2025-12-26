@@ -1,0 +1,166 @@
+/* Section Background */
+.years-section {
+    width: 100%;
+    background-color: #002E52;
+    /* Dark Blue from image */
+    padding: 4rem 1rem;
+    font-family: "Poppins", sans-serif;
+}
+
+.years-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+.years-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+}
+
+.years-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.years-title .highlight {
+    color: #FDCB46;
+    /* Yellow/Gold text */
+}
+
+.years-subtitle {
+    color: #AAB8C2;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Grid Layout */
+.years-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Card Styles */
+.year-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.year-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon Styles */
+.year-icon-wrapper {
+    background-color: #FDCB46;
+    /* Yellow circle background */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: #002E52;
+    /* Icon color dark blue */
+}
+
+/* Card Text */
+.year-card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #002E52;
+    margin-bottom: 0.5rem;
+}
+
+.year-card-subtitle {
+    font-size: 0.95rem;
+    color: #556B7F;
+    margin-bottom: 2rem;
+}
+
+/* Features List */
+.year-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    width: 100%;
+    text-align: left;
+}
+
+.year-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    color: #556B7F;
+    font-size: 0.95rem;
+}
+
+/* Custom Check Icon */
+.check-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFD54F;
+    /* Light orange/yellow circle for bullet */
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+/* Button Styles */
+.year-button {
+    background-color: #002E52;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    /* Slightly rounded, fully blocked? Image looks like full width block or wide pill */
+    width: 100%;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+    margin-top: auto;
+    /* Push to bottom */
+}
+
+.year-button:hover {
+    background-color: #004475;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .years-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .years-title {
+        font-size: 2rem;
+    }
+}

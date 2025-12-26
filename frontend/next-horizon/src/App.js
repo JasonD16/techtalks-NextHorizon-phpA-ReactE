@@ -5,6 +5,7 @@ import Home from "./Pages/Home/Home";
 import Courses from "./Pages/Courses/Courses";
 import Login from "./Pages/Authentication/Login/Login";
 import Register from "./Pages/Authentication/Login/Register/Register";
+import ForgotPass from "./Pages/Authentication/forgotpassword/forgotpass";
 import Payment from "./Pages/Payment/payment";
 
 import "./App.css";
@@ -20,8 +21,10 @@ function App() {
           <Route path="/" element={<Home />} />
 
           {/* Auth Pages */}
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPass />} />
           <Route path="/payment" element={<Payment />} />
 
           {/* Main App Pages */}
