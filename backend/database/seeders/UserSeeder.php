@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'name' => 'student',
             'email' => 'student@techtalks.com',
             'password' => Hash::make('password'),
-            'role_id' => 3,
+            'role_id' => 2,
             'university_id' => 1,
             'major' => 'Biology',
             'year' => 1

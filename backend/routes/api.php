@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UniversityController;
 use App\Http\Controllers\Api\CourseController;
+use App\Http\Controllers\Api\MaterialController;
+use App\Http\Controllers\Api\QuestionController;
 
 //AUTH
 Route::post("/register", [AuthController::class, "register"]);
@@ -42,4 +44,10 @@ Route::middleware("auth:sanctum")->group(function () {
     // PROFILE
     Route::get('/profile', [ProfileController::class, 'index']);
     Route::put('/profile/update', [ProfileController::class, 'update']);
+
+    //Questions
+    Route::post("/questions",[QuestionController::class,"store"]);
+    Route::get("/questions",[QuestionController::class,"index"]);
+    Route::get("/questions/{id}",[QuestionController::class,"show"]);
+    Route::post("/questions/{id}/replies",[QuestionController::class,"storeReply"]);
 });
