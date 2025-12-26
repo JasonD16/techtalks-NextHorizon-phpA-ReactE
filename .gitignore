@@ -1,0 +1,11 @@
+# --- Custom AI Rules ---
+GEMINI.md
+
+# --- OS & Editor Junk ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# --- Logs ---
+*.log
