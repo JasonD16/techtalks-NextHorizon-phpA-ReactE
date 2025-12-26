@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\UniversityController;
 use App\Http\Controllers\Api\CourseController;
 use App\Http\Controllers\Api\MaterialController;
 use App\Http\Controllers\Api\QuestionController;
+use App\Http\Controllers\Api\SessionController;
 
 //AUTH
 Route::post("/register", [AuthController::class, "register"]);
@@ -50,4 +51,9 @@ Route::middleware("auth:sanctum")->group(function () {
     Route::get("/questions",[QuestionController::class,"index"]);
     Route::get("/questions/{id}",[QuestionController::class,"show"]);
     Route::post("/questions/{id}/replies",[QuestionController::class,"storeReply"]);
+
+    //Sessions
+    Route::post("/sessions",[SessionController::class,"store"])->middleware("role:admin,tutor");
+    Route::get("/sessions",[SessionController::class,"index"]);
+    Route::post("/sessions/{id}/rsvp",[SessionController::class,"attend"]);
 });
