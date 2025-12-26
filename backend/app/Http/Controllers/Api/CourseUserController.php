@@ -11,9 +11,9 @@ class CourseUserController extends Controller
     public function store(Request $request)
     {
         // 1. Authorization: Only Admin
-        if ($request->user()->role->name !== 'admin') {
-            return response()->json(['message' => 'Unauthorized'], 403);
-        }
+        // if ($request->user()->role->name !== 'admin') {
+        //     return response()->json(['message' => 'Unauthorized'], 403);
+        // }
 
         // 2. Validation
         $validated = $request->validate([
@@ -31,9 +31,9 @@ class CourseUserController extends Controller
     public function destroy(Request $request)
     {
         // 1. Authorization: Only Admin
-         if ($request->user()->role->name !== 'admin') {
-            return response()->json(['message' => 'Unauthorized'], 403);
-        }
+        // if ($request->user()->role->name !== 'admin') {
+        //     return response()->json(['message' => 'Unauthorized'], 403);
+        // }
 
          // 2. Validation
         $validated = $request->validate([

@@ -38,15 +38,22 @@ class CourseController extends Controller
         // 1. SECURITY: Authorization Check
         // We check the 'role' column of the logged-in user.
         // Note: This assumes you are authenticated
-        if ($request->user()->role?->name !== 'admin') {
-             return response()->json(['message' => 'Access Denied: Admins Only'], 403);
-        }
+        // if ($request->user()->role?->name !== 'admin') {
+        //      return response()->json(['message' => 'Access Denied: Admins Only'], 403);
+        // }
 
         // 2. VALIDATION: Ensure data integrity
-        // If 'code' is missing or duplicate, Laravel throws a 422 error automatically.
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'code' => 'required|string|unique:courses,code|max:10',
+            'university_id' => 'required|exists:universities,id',
+            'code' => [
+                'required',
+                'string',
+                'max:10',
+                \Illuminate\Validation\Rule::unique('courses')->where(function ($query) use ($request) {
+                    return $query->where('university_id', $request->university_id);
+                }) // Unique per university
+            ],
         ]);
 
         // 3. ACTION: Create the course
@@ -64,9 +71,9 @@ class CourseController extends Controller
     public function destroy(Request $request, string $id)
     {
         // 1. SECURITY: Admin Check
-        if ($request->user()->role?->name !== 'admin') {
-            return response()->json(['message' => 'Access Denied: Admins Only'], 403);
-        }
+        // if ($request->user()->role?->name !== 'admin') {
+        //     return response()->json(['message' => 'Access Denied: Admins Only'], 403);
+        // }
 
         // 2. FIND: Locate the course or fail with 404
         $course = Course::findOrFail($id);

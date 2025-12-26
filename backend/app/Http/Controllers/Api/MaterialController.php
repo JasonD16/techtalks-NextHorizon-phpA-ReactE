@@ -24,16 +24,12 @@ class MaterialController extends Controller
         ]);
 
         // 2. Authorization
-        // Note: Role check is handled by middleware.
-        // Additional Logic: Tutors can only upload if they teach this course.
-        $roleName = strtolower($user->role?->name ?? '');
-        $isAdmin = $roleName === 'admin';
+        // Note: Role check ('admin' or 'tutor') is handled by middleware.
         
-        if (!$isAdmin) {
-             // For Tutors, ensure they are assigned to the course
-             // Accessing course_id safely after validation
+        // If user is a Tutor, they can ONLY upload if they teach this course.
+        // Admins bypass this check.
+        if ($user->role?->name === 'tutor') {
              $isTutorForCourse = $user->courses()->where('courses.id', $request->course_id)->exists();
-             
              if (!$isTutorForCourse) {
                   return response()->json(['message' => 'Unauthorized. You do not have permission to add materials to this course.'], 403);
              }
@@ -92,13 +88,10 @@ class MaterialController extends Controller
         $user = request()->user();
 
         // Authorization
-        $roleName = strtolower($user->role?->name ?? '');
-        $isAdmin = $roleName === 'admin';
-        
-        // Tutors can only delete their own uploads, admins can delete anything
-        if (!$isAdmin) {
-            $isOwner = $user->id === $material->uploaded_by;
-            if (!$isOwner) {
+        // Middleware allows Admin or Tutor.
+        // Tutors can only delete their own uploads. Admins can delete anything.
+        if ($user->role?->name === 'tutor') {
+            if ($user->id !== $material->uploaded_by) {
                 return response()->json(['message' => 'Unauthorized.'], 403);
             }
         }
