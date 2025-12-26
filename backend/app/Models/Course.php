@@ -18,6 +18,7 @@ class Course extends Model
     protected $fillable = [
         'name',
         'code',
+        'university_id',
     ];
 
     public function tutors()
