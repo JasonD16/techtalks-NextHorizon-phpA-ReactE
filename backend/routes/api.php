@@ -19,18 +19,25 @@ Route::get("/universities", [UniversityController::class, "index"]);
 Route::middleware("auth:sanctum")->group(function () {
     Route::post("/logout", [AuthController::class, "logout"]);
     
-    //COURSES
-    Route::post('/courses', [CourseController::class, 'store']);
-    Route::delete('/courses/{id}', [CourseController::class, 'destroy']);
+    // ADMIN ONLY ROUTES
+    Route::middleware('role:admin')->group(function () {
+        // COURSES
+        Route::post('/courses', [CourseController::class, 'store']);
+        Route::delete('/courses/{id}', [CourseController::class, 'destroy']);
 
-    //MATERIALS
-    Route::post('/materials', [MaterialController::class, 'store']);
-    Route::delete('/materials/{id}', [MaterialController::class, 'destroy']);
+        // ASSIGN TUTORS - Only admins can assign tutors
+        Route::post('/courses/assign', [\App\Http\Controllers\Api\CourseUserController::class, 'store']);
+        Route::post('/courses/unassign', [\App\Http\Controllers\Api\CourseUserController::class, 'destroy']);
+    });
+
+    // ADMIN & TUTOR ROUTES
+    Route::middleware('role:admin,tutor')->group(function () {
+        // MATERIALS
+        Route::post('/materials', [MaterialController::class, 'store']);
+        Route::delete('/materials/{id}', [MaterialController::class, 'destroy']);
+    });
+
     Route::get('/materials/filter',[MaterialController::class,'filterMaterial']);
-
-    // ASSIGN TUTORS
-    Route::post('/courses/assign', [\App\Http\Controllers\Api\CourseUserController::class, 'store']);
-    Route::post('/courses/unassign', [\App\Http\Controllers\Api\CourseUserController::class, 'destroy']);
     
     // PROFILE
     Route::get('/profile', [ProfileController::class, 'index']);

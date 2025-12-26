@@ -18,6 +18,18 @@ class AuthController extends Controller
     {
         
         $validated = $request->validated(); 
+        
+        // Default Role: Student
+        // Default Role: Student
+        if (!isset($validated['role_id'])) {
+             $studentRole = \App\Models\Role::where('name', 'student')->first();
+             if (!$studentRole) {
+                 \Illuminate\Support\Facades\Log::error('Student role not found in database during registration.');
+                 return response()->json(['message' => 'System error: Default role not configured.'], 500);
+             }
+             $validated['role_id'] = $studentRole->id;
+        }
+
         // Hash password 
         $user = User::create($validated); 
         // Generate personal access token for API authentication

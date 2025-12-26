@@ -18,19 +18,25 @@ class MaterialController extends Controller
     {
         $user = $request->user();
 
-        // 1. Authorization
-        // Admin: Allowed
-        // Tutor: Allowed only if they teach this course
+        // 1. Validation (Partial for Authorization)
         $request->validate([
             'course_id' => 'required|exists:courses,id',
         ]);
 
+        // 2. Authorization
+        // Note: Role check is handled by middleware.
+        // Additional Logic: Tutors can only upload if they teach this course.
         $roleName = strtolower($user->role?->name ?? '');
-        $isTutorForCourse = $roleName === 'tutor' && $user->courses()->where('courses.id', $request->course_id)->exists();
         $isAdmin = $roleName === 'admin';
-
-        if (!$isAdmin && !$isTutorForCourse) {
-            return response()->json(['message' => 'Unauthorized. You do not have permission to add materials to this course.'], 403);
+        
+        if (!$isAdmin) {
+             // For Tutors, ensure they are assigned to the course
+             // Accessing course_id safely after validation
+             $isTutorForCourse = $user->courses()->where('courses.id', $request->course_id)->exists();
+             
+             if (!$isTutorForCourse) {
+                  return response()->json(['message' => 'Unauthorized. You do not have permission to add materials to this course.'], 403);
+             }
         }
 
         // 2. Validation
@@ -90,11 +96,11 @@ class MaterialController extends Controller
         $isAdmin = $roleName === 'admin';
         
         // Tutors can only delete their own uploads, admins can delete anything
-        
-        $isOwner = $user->id === $material->uploaded_by;
-
-        if (!$isAdmin && !$isOwner) {
-             return response()->json(['message' => 'Unauthorized.'], 403);
+        if (!$isAdmin) {
+            $isOwner = $user->id === $material->uploaded_by;
+            if (!$isOwner) {
+                return response()->json(['message' => 'Unauthorized.'], 403);
+            }
         }
 
         $material->delete(); // Soft delete
