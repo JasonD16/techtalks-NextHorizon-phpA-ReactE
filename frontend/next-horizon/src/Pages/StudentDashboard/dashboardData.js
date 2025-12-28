@@ -1,4 +1,4 @@
-import { FaFilm, FaFileAlt, FaClipboardList, FaTasks } from "react-icons/fa";
+import { FaFilm, FaFileAlt, FaClipboardList, FaTasks, FaHome } from "react-icons/fa";
 
 export const DASHBOARD_DATA = {
   user: {
@@ -7,6 +7,7 @@ export const DASHBOARD_DATA = {
     progress: 37,
   },
   tabs: [
+    { id: "overview", label: "Overview", icon: <FaHome /> },
     { id: "lectures", label: "Lectures", icon: <FaFilm /> },
     { id: "past-exams", label: "Past Exams", icon: <FaFileAlt /> },
     { id: "summaries", label: "Summaries", icon: <FaClipboardList /> },
@@ -63,10 +64,12 @@ export const DASHBOARD_DATA = {
     "Practice Exam",
     "Midterm Exam 1",
     "Midterm Exam 2",
+    "Final Exam Preparation",
   ],
   summaries: [
     "Limits and Continuity",
     "Derivatives and Differentiation",
     "Integration and Applications",
+    "Series and Sequences",
   ]
 };
