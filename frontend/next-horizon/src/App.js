@@ -6,6 +6,7 @@ import Courses from "./Pages/Courses/Courses";
 import Login from "./Pages/Authentication/Login/Login";
 import Register from "./Pages/Authentication/Login/Register/Register";
 import Payment from "./Pages/Payment/payment";
+import StudentDashboard from "./Pages/StudentDashboard/StudentDashboard";
 
 import "./App.css";
 
@@ -23,6 +24,9 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/payment" element={<Payment />} />
+          
+          {/* Dashboard */}
+          <Route path="/dashboard" element={<StudentDashboard />} />
 
           {/* Main App Pages */}
           <Route path="/courses" element={<Courses />} />
