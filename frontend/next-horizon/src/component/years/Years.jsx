@@ -1,5 +1,6 @@
 import React from "react";
-import { RiBookReadLine, RiGraduationCapLine, RiCheckLine } from "react-icons/ri";
+import { LuBookOpen, LuGraduationCap } from "react-icons/lu";
+import { RiCheckLine } from "react-icons/ri";
 import "./Years.css";
 
 const Years = () => {
@@ -8,7 +9,7 @@ const Years = () => {
             id: 1,
             title: "First Year",
             subtitle: "Foundation courses and essential subjects",
-            icon: <RiBookReadLine size={32} />,
+            icon: <LuBookOpen size={40} strokeWidth={2.5} />,
             features: [
                 "Complete video lecture library",
                 "Past exams with solutions",
@@ -22,7 +23,7 @@ const Years = () => {
             id: 2,
             title: "Second Year",
             subtitle: "Advanced topics and specialized subjects",
-            icon: <RiGraduationCapLine size={32} />,
+            icon: <LuGraduationCap size={40} strokeWidth={2.5} style={{ transform: "scaleX(-1)" }} />,
             features: [
                 "second year video lectures",
                 "Past exams with solutions",

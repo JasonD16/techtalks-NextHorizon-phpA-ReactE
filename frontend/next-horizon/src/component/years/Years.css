@@ -113,18 +113,16 @@
     font-size: 0.95rem;
 }
 
-/* Custom Check Icon */
+/* Custom Check Icon Container */
 .check-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFD54F;
-    /* Light orange/yellow circle for bullet */
-    color: #fff;
+    background-color: #FFECB3;
+    /* Lighter yellow bg */
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    font-size: 0.8rem;
     flex-shrink: 0;
 }
 
@@ -155,6 +153,10 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
+    .years-section {
+        padding: 3rem 1rem;
+    }
+
     .years-grid {
         flex-direction: column;
         align-items: center;
@@ -162,5 +164,23 @@
 
     .years-title {
         font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .years-section {
+        padding: 2rem 1rem;
+    }
+
+    .years-title {
+        font-size: 1.75rem;
+    }
+
+    .years-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .year-card {
+        padding: 2rem 1.5rem;
     }
 }

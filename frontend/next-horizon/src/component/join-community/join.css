@@ -87,20 +87,51 @@
     background-color: #e5b63e;
 }
 
-.secondary-btn {
-    background-color: white;
-    color: #002E52;
-    border: none;
-    min-width: 150px;
-    /* Width for the empty white box */
-}
-
-.secondary-btn:hover {
-    background-color: #f0f0f0;
-}
-
 /* Note */
 .join-note {
     font-size: 14px;
     color: #7d8b9a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .join-section {
+        padding: 60px 20px;
+    }
+
+    .join-title {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-section {
+        padding: 40px 16px;
+    }
+
+    .join-title {
+        font-size: 28px;
+    }
+
+    .join-description {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .join-badge {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+
+    .join-buttons {
+        gap: 15px;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .join-btn {
+        width: 100%;
+        justify-content: center;
+    }
 }

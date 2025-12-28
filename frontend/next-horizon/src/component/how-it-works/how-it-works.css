@@ -121,3 +121,37 @@
         width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    .how-it-works {
+        padding: 30px 0;
+    }
+
+    .how-it-works-title {
+        font-size: 28px;
+    }
+
+    .how-it-works-description {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .how-it-works-icon-box {
+        width: 100px;
+        height: 100px;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .how-it-works-badge {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        top: -10px;
+        right: -10px;
+    }
+
+    .how-it-works-step-title {
+        font-size: 18px;
+    }
+}

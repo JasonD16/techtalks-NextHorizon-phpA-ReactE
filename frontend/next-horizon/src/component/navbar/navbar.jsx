@@ -66,9 +66,9 @@ const Navbar = ({ simple, showProfile, userName = "User" }) => {
                             <a href="#about" className="nav-link">About</a>
                         </div>
 
-                        {/* Get Started Button */}
+                        {/* Register Button */}
                         <button className="navbar-cta-button" onClick={() => navigate("/login")}>
-                            Get Started
+                            Register
                         </button>
 
                         {/* Hamburger Menu Icon */}
@@ -115,7 +115,7 @@ const Navbar = ({ simple, showProfile, userName = "User" }) => {
             {/* Mobile Menu Dropdown */}
             <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
                 <a href="#features" className="mobile-nav-link" onClick={toggleMenu}>Features</a>
-                <a href="#years" className="mobile-nav-link" onClick={toggleMenu}>Years</a>
+                <a href="#years" className="mobile-nav-link" onClick={toggleMenu}>Branches</a>
                 <span className="mobile-nav-link" onClick={() => { navigate("/courses"); toggleMenu(); }}>Courses</span>
                 <a href="#about" className="mobile-nav-link" onClick={toggleMenu}>About</a>
             </div>

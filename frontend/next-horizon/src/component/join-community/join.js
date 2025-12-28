@@ -29,10 +29,6 @@ function Join() {
                     <Link to="/courses" className="join-btn primary-btn">
                         Start Learning Today <span className="arrow">→</span>
                     </Link>
-
-                    <button className="join-btn secondary-btn">
-                        {/* Empty white button area as per image request */}
-                    </button>
                 </div>
 
                 {/* Footer Note */}

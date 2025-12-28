@@ -59,10 +59,25 @@
 
 /* Icons */
 .features-icon {
-  width: 45px;
-  height: 45px;
-  object-fit: contain;
-  margin-bottom: 0.3rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 28px;
+  margin-bottom: 0.8rem;
+}
+
+/* Alternating icon background colors - Yellow for odd, Dark blue for even */
+.features-card:nth-child(odd) .features-icon {
+  background-color: #F3F3F3;
+  color: #FDCB46;
+}
+
+.features-card:nth-child(even) .features-icon {
+  background-color: #F3F3F3;
+  color: #002E52;
 }
 
 .features-card h3 {
@@ -107,7 +122,8 @@
   }
 
   .features-icon {
-    width: 38px;
-    height: 38px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
   }
 }

@@ -127,11 +127,8 @@
 .register-text a:hover {
   color: #001d36;
 }
-<<<<<<< HEAD
-=======
 
 /* ===== FORGOT PASSWORD LINK ===== */
->>>>>>> b6ecf58ee487ae3ed8f0643c89ee75e9f2fb6d64
 .forgot-text {
   text-align: center;
   margin-top: 20px;
@@ -147,8 +144,4 @@
 
 .forgot-text a:hover {
   color: #001d36;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b6ecf58ee487ae3ed8f0643c89ee75e9f2fb6d64
