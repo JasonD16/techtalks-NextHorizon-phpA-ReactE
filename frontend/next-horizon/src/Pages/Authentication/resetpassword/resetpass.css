@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.resetpass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #002E52;
+}
+
+.auth-card {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-card h1 {
+    color: #002E52;
+    margin-bottom: 0.5rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.auth-card p {
+    color: #333;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 2px solid #FDCB46;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.auth-card input:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.auth-card input:focus {
+    border-color: #FDCB46;
+}
+
+.auth-card button {
+    background-color: #002E52;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.auth-card button:hover {
+    background-color: #001d36;
+}

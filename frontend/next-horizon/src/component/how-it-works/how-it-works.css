@@ -1,0 +1,157 @@
+.how-it-works {
+    background-color: white;
+    width: 100%;
+    padding: 50px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.how-it-works-title {
+    text-align: center;
+    color: #002E52;
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.how-it-works-title span {
+    color: #FDCB46;
+}
+
+.how-it-works-description {
+    text-align: center;
+    color: #D9D9D9;
+    margin-bottom: 80px;
+    font-size: 20px;
+}
+
+.how-it-works-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Connecting Line */
+.how-it-works-line {
+    position: absolute;
+    top: 60px;
+    /* Adjust based on icon box size */
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background-color: #FDCB46;
+    z-index: 0;
+}
+
+.how-it-works-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    gap: 20px;
+}
+
+.how-it-works-step-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+}
+
+.how-it-works-icon-box {
+    width: 120px;
+    height: 120px;
+    background-color: #FDCB46;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: #002E52;
+}
+
+.how-it-works-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 40px;
+    height: 40px;
+    background-color: #002E52;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.how-it-works-step-title {
+    color: #002E52;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.how-it-works-step-description {
+    color: #002E52;
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 250px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .how-it-works-steps {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .how-it-works-line {
+        display: none;
+        /* Hide line on mobile */
+    }
+
+    .how-it-works-step-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .how-it-works {
+        padding: 30px 0;
+    }
+
+    .how-it-works-title {
+        font-size: 28px;
+    }
+
+    .how-it-works-description {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+
+    .how-it-works-icon-box {
+        width: 100px;
+        height: 100px;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .how-it-works-badge {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+        top: -10px;
+        right: -10px;
+    }
+
+    .how-it-works-step-title {
+        font-size: 18px;
+    }
+}

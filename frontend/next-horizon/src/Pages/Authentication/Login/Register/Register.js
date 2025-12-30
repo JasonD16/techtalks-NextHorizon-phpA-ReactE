@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 
 function Register() {
+  const navigate = useNavigate();
   const [universities, setUniversities] = useState([]);
 
   // ===== FETCH UNIVERSITIES FROM BACKEND LATER =====
@@ -25,33 +26,38 @@ function Register() {
   return (
     <div className="register-page">
 
+      {/* Close Button */}
+      <button className="close-btn" onClick={() => navigate('/')}>
+        ×
+      </button>
+
       <div className="register-card">
 
         <h2 className="register-title">REGISTER</h2>
 
         <form className="register-form">
 
-          <input 
-            type="text" 
-            placeholder="Full Name" 
+          <input
+            type="text"
+            placeholder="Full Name"
             className="input-field"
           />
 
-          <input 
-            type="email" 
-            placeholder="Email" 
+          <input
+            type="email"
+            placeholder="Email"
             className="input-field"
           />
 
-          <input 
-            type="password" 
-            placeholder="Password" 
+          <input
+            type="password"
+            placeholder="Password"
             className="input-field"
           />
 
-          <input 
-            type="password" 
-            placeholder="Confirm Password" 
+          <input
+            type="password"
+            placeholder="Confirm Password"
             className="input-field"
           />
 
@@ -63,21 +69,12 @@ function Register() {
           </select>
 
           {/* University */}
-          <div className="register-select-row">
-            <select className="input-field select-field">
-              <option value="">Choose your University</option>
-              {universities.map((uni, index) => (
-                <option key={index}>{uni}</option>
-              ))}
-            </select>
-
-            {/* Role */}
-            <select className="input-field select-field">
-              <option value="">Role</option>
-              <option value="student">Student</option>
-              <option value="tutor">Tutor</option>
-            </select>
-          </div>
+          <select className="input-field select-field">
+            <option value="">Choose your University</option>
+            {universities.map((uni, index) => (
+              <option key={index}>{uni}</option>
+            ))}
+          </select>
 
           <button type="submit" className="btn-register">
             REGISTER
@@ -85,24 +82,10 @@ function Register() {
 
         </form>
 
-        {/* Divider */}
-        <div className="divider">
-          <span></span>
-          <p>Or</p>
-          <span></span>
-        </div>
 
-        {/* Google Sign Up */}
-        <button className="google-btn">
-          <img 
-            src="https://www.svgrepo.com/show/475656/google-color.svg" 
-            alt="google" 
-          />
-          Sign up by Google
-        </button>
 
         <p className="signin-text">
-          Already have an account? <Link to="/Login">Sign In</Link>
+          Already have an account? <Link to="/login">Sign In</Link>
         </p>
 
       </div>

@@ -42,7 +42,7 @@ const HeroSection = () => {
                                     <span className="cta-button-icon">→</span>
                                 </button>
 
-                                <button className="cta-secondary-button">
+                                <button className="cta-secondary-button" onClick={() => navigate("/courses")}>
                                     <span className="cta-button-text">Explore courses</span>
                                 </button>
                             </div>

@@ -250,7 +250,7 @@
 @media (max-width: 1024px) {
     .hero-main {
         min-height: 600px;
-        padding: 60px 20px 50px;
+        padding: 80px 20px 50px;
     }
 
     .hero-title {
@@ -280,7 +280,7 @@
 @media (max-width: 768px) {
     .hero-main {
         min-height: 550px;
-        padding: 50px 20px 40px;
+        padding: 80px 20px 40px;
     }
 
     .hero-title {
@@ -335,7 +335,7 @@
 @media (max-width: 640px) {
     .hero-main {
         min-height: 500px;
-        padding: 40px 16px 30px;
+        padding: 75px 16px 30px;
     }
 
     .hero-title-wrapper {
@@ -399,7 +399,7 @@
 @media (max-width: 480px) {
     .hero-main {
         min-height: 450px;
-        padding: 30px 12px 25px;
+        padding: 70px 12px 25px;
     }
 
     .hero-title {
@@ -449,7 +449,7 @@
 @media (max-width: 360px) {
     .hero-main {
         min-height: 400px;
-        padding: 25px 10px 20px;
+        padding: 70px 10px 20px;
     }
 
     .hero-title {
